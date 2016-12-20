@@ -22,13 +22,6 @@ function startAnimation(rotSpeed1, rotSpeed2){
 		.x(function(d){ return d.x; })
 		.y(function(d){ return d.y; });
 		
-	var traceFunction = d3.line()
-		.curve(d3.curveBasis)
-		.x(function(d){ return d.x; })
-		.y(function(d){ return d.y; });
-
-
-		
 	var circles = svg.append("g")
 		.attr("id", "circles");
 		
@@ -168,7 +161,7 @@ function startAnimation(rotSpeed1, rotSpeed2){
 				p.x = p1.x;
 				p.y = p2.y;
 				pathData.push(p);
-				return traceFunction(pathData);
+				return lineFunction(pathData);
 			}
 		}
 	}
